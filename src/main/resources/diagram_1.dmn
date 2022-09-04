@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_1sqc05f" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.2.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <decision id="approve-payment" name="Approve Payment">
+    <decisionTable id="DecisionTable_09ou921">
+      <input id="Input_1" label="Item" biodi:width="192">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>item</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Approved" name="approved" typeRef="boolean" biodi:width="192" />
+      <rule id="DecisionRule_1wz8n1t">
+        <inputEntry id="UnaryTests_1drtgrw">
+          <text>"item-xyz"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1tz8qmu">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_16gbk17">
+        <inputEntry id="UnaryTests_0yuoeoc">
+          <text>not("item-xyz")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09ix05d">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="approve-payment">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
